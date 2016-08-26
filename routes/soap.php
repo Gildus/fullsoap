@@ -13,8 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
-
-Route::get('/suma', 'RestfullController@getSuma');
+Route::get('/operacion', 'SoapController@operaciones');
+Route::post('/operacion', 'SoapController@operaciones');
