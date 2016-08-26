@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Route;
 use phpDocumentor\Reflection\Types\Null_;
+
 use Zend\Soap\AutoDiscover;
 use Zend\Soap\Server;
-
 use App\Http\Controllers\Operaciones;
 
-use App\Http\Requests;use Monolog\Formatter\ScalarFormatter;
+use App\Http\Requests;
+use Monolog\Formatter\ScalarFormatter;
 
 class SoapController extends Controller
 {
@@ -63,6 +64,7 @@ class SoapController extends Controller
                 ]);
                 break;
             default:
+				/// another controls ...
                 break;
         }
 
