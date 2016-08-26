@@ -39,6 +39,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapApiRoutes();
 
+        $this->mapSoapRoutes();
+
         //
     }
 
@@ -76,4 +78,24 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+    /**
+     * Define the "soap" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function  mapSoapRoutes()
+    {
+        Route::group([
+            'middleware' => 'soap',
+            'namespace' => $this->namespace,
+            'prefix' => 'soap',
+        ], function ($router) {
+            require base_path('routes/soap.php');
+        });
+    }
+
+
 }
